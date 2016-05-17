@@ -60,6 +60,7 @@
 		616D295A334C09073E8F684D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3DC973C1058F7777E8B6962 /* LXTool.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LXTool.podspec; path = ../LXTool.podspec; sourceTree = "<group>"; };
+		BEB6F7D91CEAAD0F007D438B /* LXTool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = LXTool.framework; path = "/Users/LXThyme/Library/Developer/Xcode/DerivedData/LXTool-bqebjjawaorykegwhtvikopagxxl/Build/Products/Debug-iphonesimulator/LXTool/LXTool.framework"; sourceTree = "<absolute>"; };
 		CF033C5B52248A6E78A0B71D /* Pods_LXTool_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LXTool_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11EEBEBF6DF55FD7A9FF729 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		E05AEFC19940938FDA33B858 /* Pods-LXTool_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LXTool_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LXTool_Example/Pods-LXTool_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
+				BEB6F7D91CEAAD0F007D438B /* LXTool.framework */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for LXTool */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -366,7 +368,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LXTool_Example/Pods-LXTool_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		D77549C1A9854DA8050317C8 /* 📦 Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -516,6 +517,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LXTool/LXTool-Prefix.pch";
 				INFOPLIST_FILE = "LXTool/LXTool-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -532,6 +534,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LXTool/LXTool-Prefix.pch";
 				INFOPLIST_FILE = "LXTool/LXTool-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

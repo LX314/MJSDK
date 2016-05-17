@@ -8,6 +8,9 @@
 
 #import "LXViewController.h"
 
+#import <LXTool/Macro.h>
+#import <LXTool/LXTool.h>
+
 @interface LXViewController ()
 
 @end
@@ -18,6 +21,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    CGRect main = kMainScreen;
+    main = kMainScreen;
 }
 
 - (void)didReceiveMemoryWarning
