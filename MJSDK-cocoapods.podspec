@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MJSDK-cocoapods'
-  s.version          = '1.5.1'
+  s.version          = '1.5.3'
   s.summary          = 'summary of MJSDK-cocoapods.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,8 @@ description of MJSDK-cocoapods.
   s.source_files = 'MJSDK-cocoapods/Classes/**/*'
   
    s.resource_bundles = {
-     'MJSDK-cocoapods' => ['MJSDK-cocoapods/Assets/*.png']
+#     'MJSDK-cocoapods' => ['MJSDK-cocoapods/Assets/*.png']
+    'MJSDK-cocoapods' => ['MJSDK-cocoapods/Assets/*']
    }
 
    s.public_header_files = 'MJSDK-cocoapods/Classes/**/*.h'
@@ -43,7 +44,7 @@ description of MJSDK-cocoapods.
 s.dependency 'AFNetworking'
 s.dependency 'Masonry'
 s.dependency 'Mantle'
-#s.dependency 'OpenSSL'
+s.dependency 'OpenSSL'
 s.dependency 'MBProgressHUD'
 s.dependency 'SSKeychain'
 s.dependency 'ReactiveCocoa', '~>2.0'

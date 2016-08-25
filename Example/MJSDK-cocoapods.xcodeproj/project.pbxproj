@@ -513,6 +513,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJSDK-cocoapods/MJSDK-cocoapods-Prefix.pch";
 				INFOPLIST_FILE = "MJSDK-cocoapods/MJSDK-cocoapods-Info.plist";
@@ -531,6 +533,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJSDK-cocoapods/MJSDK-cocoapods-Prefix.pch";
 				INFOPLIST_FILE = "MJSDK-cocoapods/MJSDK-cocoapods-Info.plist";

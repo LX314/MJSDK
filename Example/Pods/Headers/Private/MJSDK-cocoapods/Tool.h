@@ -1,1 +1,1 @@
-../../../../../MJSDK-cocoapods/Classes/Tools/Tool.h
+../../../../../MJSDK-cocoapods/Classes/MJSDK/Component/Tools/Tool.h

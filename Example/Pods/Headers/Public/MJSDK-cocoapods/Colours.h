@@ -1,1 +1,1 @@
-../../../../../MJSDK-cocoapods/Classes/3rd/Colours/Colours.h
+../../../../../MJSDK-cocoapods/Classes/MJSDK/Component/Colours/Colours.h
