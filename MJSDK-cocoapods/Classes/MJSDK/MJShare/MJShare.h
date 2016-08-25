@@ -12,6 +12,8 @@
 
 #import "MJAppsManager.h"
 
+//#import "MJBaseShareContent.h"
+
 @interface MJShare : UIView
 {
     
@@ -28,5 +30,11 @@
 //- (void)show;
 - (void)showIn:(MJAppsManager *)appsManager;
 - (void)fill:(NSDictionary *)params;
+
+//**************
+/** <#注释#>*/
+@property (nonatomic,copy)kMJGotoStepBlockBlock mjGotoStepBlockBlock;
+/** <#注释#>*/
+@property (nonatomic,copy)kMJModifyBlock mjModifyBlock;
 
 @end

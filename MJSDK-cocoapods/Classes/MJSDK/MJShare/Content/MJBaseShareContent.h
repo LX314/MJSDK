@@ -15,23 +15,10 @@
 
 #import "MJTool.h"
 #import "MJShare.h"
+#import "MJBlocks.h"
 
 //#import "UIImageView+AFNetworking.h"
 #import "UIImageView+placeholder.h"
-
-typedef NS_ENUM(NSInteger, KMJShareStep) {
-    KMJShareUnknownStep = 0,
-    KMJShareFirstStep = 1,
-    KMJShareSecondStep = 2,
-    KMJShareThirdStep = 3,
-    KMJShareFourthStep = 4,
-    KMJShareFifthStep = 5,
-    KMJShareSixthStep = 6
-};
-void (^kGotoStepBlockBlock)(KMJShareStep step);
-void (^kModifyBlock)(KMJShareStep step);
-void (^kGetBlock)(KMJShareStep step);
-
 
 @interface MJBaseShareContent : UIView
 {

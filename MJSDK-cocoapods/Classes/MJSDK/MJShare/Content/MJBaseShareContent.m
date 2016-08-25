@@ -94,19 +94,19 @@
             NSDictionary * coupons_info = params[@"coupons_info"];
             if ([params[@"usable_coupons_num"] integerValue] > 0 && [coupons_info[@"coupons_status"] boolValue] == YES) {
                 
-                kGotoStepBlockBlock(KMJShareFourthStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareFourthStep);
 
             } else if ([params[@"usable_coupons_num"] integerValue] > 0 && [coupons_info[@"coupons_status"] boolValue] == NO) {
                 
-                kGotoStepBlockBlock(KMJShareSixthStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareSixthStep);
                 
             } else if ([params[@"usable_coupons_num"] integerValue] == 0 && [coupons_info[@"coupons_status"] boolValue] == YES) {
                 
-                kGotoStepBlockBlock(KMJShareFifthStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareFifthStep);
                 
             } else {
                 
-                kGotoStepBlockBlock(KMJShareSecondStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareSecondStep);
                 
             }
     
@@ -114,16 +114,16 @@
             
             if (_currentStep == KMJShareFourthStep) {
                 
-                kGotoStepBlockBlock(KMJShareSixthStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareSixthStep);
                 
             } else if (_currentStep == KMJShareFirstStep) {
          
                 [MJTool saveMJShareNewTel:self.textField.text];
-                kGotoStepBlockBlock(KMJShareSecondStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareSecondStep);
                 
             }else if (_currentStep == KMJShareFifthStep)  {
             
-                kGotoStepBlockBlock(KMJShareSecondStep);
+                self.mjShare.mjGotoStepBlockBlock(KMJShareSecondStep);
             }
             
         } else if ([params[@"claim_status"] boolValue] == NO){
@@ -243,7 +243,7 @@
 {
     [self delayClickOperation:sender];
     [[NSUserDefaults standardUserDefaults]setObject:@(_currentStep) forKey:@"lastStep"];
-    kGotoStepBlockBlock(KMJShareThirdStep);
+    self.mjShare.mjGotoStepBlockBlock(KMJShareThirdStep);
 }
 #pragma mark - btn_get -- 立即领取
 - (UIButton *)btn_get {

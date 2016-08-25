@@ -56,4 +56,9 @@
 - (void)show;
 - (void)initShow;
 
+
+//***************
+/** <#注释#>*/
+@property (nonatomic,copy)kMJGotoExposureBlock mjGotoExposureBlock;
+
 @end

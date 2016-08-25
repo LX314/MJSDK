@@ -113,14 +113,14 @@
     if (_mjResponse.need_times < 0) {
         _mjResponse.need_times--;
         NSLog(@"已完成任务,请明天再来吧~~");
-        kMJAppsShowToastBlock(@"已成功获取道具,请明天再来吧~~", YES);
+        self.appsManager.mjAppsShowToastBlock(@"已成功获取道具,请明天再来吧~~", YES);
         return;
     }
     if (_mjResponse.need_times == 0) {
         _mjResponse.need_times--;
         NSLog(@"分享次数已经完成,开始领取道具");
-        kMJAppsShowToastBlock(@"分享次数已经完成,开始领取道具", NO);
-        kMJAppsGetPropBlock();
+        self.appsManager.mjAppsShowToastBlock(@"分享次数已经完成,开始领取道具", NO);
+        self.appsManager.mjAppsGetPropBlock();
         return;
     }
 
@@ -145,12 +145,12 @@
                     NSLog(@"KMJWechatShareBeginState...");
                 }else if(status == KMJWechatShareFailState || status == KMJWechatShareCancelState) {
                     NSLog(@"分享失败");
-                    kMJAppsShowToastBlock(@"分享失败", NO);
+                    self.appsManager.mjAppsShowToastBlock(@"分享失败", NO);
                 }else if(status == KMJWechatShareSuccessState) {
                     //曝光
                     NSString *btnURL = impAds.apps.btnUrl;
                     if (![MJExceptionReportManager validateAndExceptionReport:btnURL]) {
-                        kMJAppsShowToastBlock(@"wechat report url error", NO);
+                        self.appsManager.mjAppsShowToastBlock(@"wechat report url error", NO);
                         return ;
                     }
                     //分享上报
@@ -161,16 +161,16 @@
                         [MJTool insertSharedDataForInnovationID:innovativeId];
                         _mjResponse.need_times--;
                         impAds.hasShared = YES;
-                        kMJAppsCellClickedBlock(self.selfIndexPath);
+                        self.appsManager.mjAppsCellClickedBlock(self.selfIndexPath);
                         if (_mjResponse.need_times <= 0) {
                             NSLog(@"分享次数已经完成,开始领取道具");
-                            kMJAppsShowToastBlock(@"分享次数已经完成,开始领取道具", NO);
-                            kMJAppsGetPropBlock();
+                            self.appsManager.mjAppsShowToastBlock(@"分享次数已经完成,开始领取道具", NO);
+                            self.appsManager.mjAppsGetPropBlock();
                             return;
                         }
-                        kMJAppsShowToastBlock(@"分享成功", NO);
+                        self.appsManager.mjAppsShowToastBlock(@"分享成功", NO);
                     } failed:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
-                        kMJAppsShowToastBlock(@"服务器出错，分享失败", NO);
+                        self.appsManager.mjAppsShowToastBlock(@"服务器出错，分享失败", NO);
                     }];
                 } else {
                     NSLog(@"status:%ld", status);
@@ -179,7 +179,7 @@
                 //title长度限制为512字节 description长度限制为1024字节
             } title:share_title description:share_subtitle imagesArray:@[share_image] url:landingPageUrl];
         } failure:^(NSURLRequest * _Nullable request, NSHTTPURLResponse * _Nullable response, NSError * _Nullable error) {
-            kMJAppsShowToastBlock(@"分享 logo 下载失败, 请重试",  NO);
+            self.appsManager.mjAppsShowToastBlock(@"分享 logo 下载失败, 请重试",  NO);
         }];
     });
 }

@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  MJSDK-iOS
+
+  Created by John LXThyme on 16/8/22.
+  Copyright © 2016年 WM. All rights reserved.
+*/
+"Loc_QueryProp_Status_1" = "";
+"Loc_QueryProp_Status_2" = "今天免费任务已完成，明天再来吧。";
+"Loc_QueryProp_Status_3" = "分享次数不够，兑换失败。";
+"Loc_QueryProp_Status_4" = "道具价格太高，兑换失败。";
+"Loc_QueryProp_Status_5" = "发生了一个错误，兑换失败。";
+"Loc_QueryProp_Status_6" = "另外个免费任务正在进行，兑换失败，请稍后再来。";

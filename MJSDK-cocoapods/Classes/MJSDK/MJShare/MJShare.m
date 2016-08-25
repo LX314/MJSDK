@@ -81,8 +81,8 @@
     self.defaultMaskType = LXMJViewMaskTypeGradient;
     [MJTool updateMask:LXMJViewMaskTypeGradient selfView:self layer:self.backgroundLayer color:self.backgroundLayerColor];
     //
-    [self modifyBlock];
-    [self gotoStepBlock];
+//    [self modifyBlock];
+//    [self gotoStepBlock];
 }
 - (void)show {
     
@@ -94,37 +94,37 @@
     self.appsManager = appsManager;
     [self queryCouponsInfo];
 }
-- (void)modifyBlock {
-    kModifyBlock = ^(KMJShareStep step) {
-
-    };
-
-}
-- (void)gotoStepBlock {
-    __weak typeof(self) weakSelf = self;
-    kGotoStepBlockBlock = ^(KMJShareStep step){
-        static MJBaseShareContent *lastShareContent = nil;
-        MJBaseShareContent *shareContent = _arrayAllSteps[step - 1];
-        if (lastShareContent) {
-            [lastShareContent removeFromSuperview];
-            lastShareContent = nil;
-        }
-        if (![self superview]) {
-            [mjSuperview() addSubview:self];
-            [self masonrySelf];
-        }
-        NSString *step_info = NSStringFromClass([shareContent class]);
-        NSLog(@"%@", step_info);
-        [[MJToast manager]showIn:self];
-        lastShareContent = shareContent;
-        shareContent.currentStep = step;
-        shareContent.mjShare = self;
-        _isGoodReport = NO;
-        [self.mjRecommend isReport:_isGoodReport];
-        [shareContent fill:_params];
-        [weakSelf.mjHeader addSubview:shareContent];
-    };
-}
+//- (void)modifyBlock {
+//    kModifyBlock = ^(KMJShareStep step) {
+//
+//    };
+//
+//}
+//- (void)gotoStepBlock {
+//    __weak typeof(self) weakSelf = self;
+//    kGotoStepBlockBlock = ^(KMJShareStep step){
+//        static MJBaseShareContent *lastShareContent = nil;
+//        MJBaseShareContent *shareContent = _arrayAllSteps[step - 1];
+//        if (lastShareContent) {
+//            [lastShareContent removeFromSuperview];
+//            lastShareContent = nil;
+//        }
+//        if (![self superview]) {
+//            [mjSuperview() addSubview:self];
+//            [self masonrySelf];
+//        }
+//        NSString *step_info = NSStringFromClass([shareContent class]);
+//        NSLog(@"%@", step_info);
+//        [[MJToast manager]showIn:self];
+//        lastShareContent = shareContent;
+//        shareContent.currentStep = step;
+//        shareContent.mjShare = self;
+//        _isGoodReport = NO;
+//        [self.mjRecommend isReport:_isGoodReport];
+//        [shareContent fill:_params];
+//        [weakSelf.mjHeader addSubview:shareContent];
+//    };
+//}
 
 /**
  *  @brief 查券
@@ -154,7 +154,7 @@
             //1`领券
             NSString *info = @"[2`新用户 + 有默认券]";
             NSLog(@"%@",info);
-            kGotoStepBlockBlock(KMJShareFirstStep);//firstStep
+            self.mjGotoStepBlockBlock(KMJShareFirstStep);//firstStep
             return ;
         }
         if (hasRegistered && usable_coupons_num == 0) {//老用户 + 已有0券
@@ -163,7 +163,7 @@
             if (hasNew) {
                 NSString *info = @"[有新券]";
                 NSLog(@"%@",info);
-                kGotoStepBlockBlock(KMJShareFifthStep);//fifthStep
+                self.mjGotoStepBlockBlock(KMJShareFifthStep);//fifthStep
             } else {
                 [MJToast toast:@"道具已经领取过" in:self];//老用户，已有券0，无新券
                 NSLog(@"[无新券]");
@@ -176,11 +176,11 @@
             if (hasNew) {
                 NSString *info = @"[有新券]";
                 NSLog(@"%@",info);
-                kGotoStepBlockBlock(KMJShareFourthStep);//fourthStep
+                self.mjGotoStepBlockBlock(KMJShareFourthStep);//fourthStep
             } else {
                 NSString *info = @"[无新券]";
                 NSLog(@"%@",info);
-                kGotoStepBlockBlock(KMJShareSixthStep);//sixthStep
+                self.mjGotoStepBlockBlock(KMJShareSixthStep);//sixthStep
             }
             return;
         }
@@ -192,6 +192,51 @@
     _params = params;
     [self.mjRecommend fill:params];
 }
+#pragma mark - mjModifyBlock
+- (kMJModifyBlock)mjModifyBlock
+{
+    if(!_mjModifyBlock){
+        _mjModifyBlock = ^(KMJShareStep step) {
+
+        };
+    }
+
+    return _mjModifyBlock;
+}
+
+#pragma mark - mjGotoStepBlockBlock
+- (kMJGotoStepBlockBlock)mjGotoStepBlockBlock
+{
+    WEAKSELF
+    if(!_mjGotoStepBlockBlock){
+        _mjGotoStepBlockBlock = ^(KMJShareStep step){
+            static MJBaseShareContent *lastShareContent = nil;
+            MJBaseShareContent *shareContent = _arrayAllSteps[step - 1];
+            if (lastShareContent) {
+                [lastShareContent removeFromSuperview];
+                lastShareContent = nil;
+            }
+            if (![self superview]) {
+                [mjSuperview() addSubview:self];
+                [self masonrySelf];
+            }
+            NSString *step_info = NSStringFromClass([shareContent class]);
+            NSLog(@"%@", step_info);
+            [[MJToast manager]showIn:self];
+            lastShareContent = shareContent;
+            shareContent.currentStep = step;
+            shareContent.mjShare = self;
+            _isGoodReport = NO;
+            [self.mjRecommend isReport:_isGoodReport];
+            [shareContent fill:_params];
+            [weakSelf.mjHeader addSubview:shareContent];
+        };
+
+    }
+
+    return _mjGotoStepBlockBlock;
+}
+
 #pragma mark -
 #pragma mark - Masonry Methods
 - (void)updateConstraints {

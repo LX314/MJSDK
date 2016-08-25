@@ -14,7 +14,7 @@
 #import "MJFullOpenScreen.h"
 #import "MJGLButtonInline.h"
 #import "MJSDKConf.h"
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa.h>
 
 @interface MJBaseManager ()<UITableViewDelegate,UITableViewDataSource>
 {
@@ -247,7 +247,7 @@
 //
     [self setUp];
     //曝光
-    [self exposureBlock];
+//    [self exposureBlock];
     //网络请求时状态栏网络状态小转轮
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
 }
@@ -310,25 +310,49 @@
 }
 #pragma mark -
 #pragma mark - block
-- (void)exposureBlock {
-    WEAKSELF
-    kMJGotoExposureBlock = ^(MJImpAds *impAds){
-        impAds.hasExposured = YES;
-        [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
-            //
-            STRONGSELF
-            [MJTool responds:strongSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [strongSelf.delegate mjADDidExposure:strongSelf error:nil];
+#pragma mark - mjGotoExposureBlock
+- (kMJGotoExposureBlock)mjGotoExposureBlock
+{
+    if(!_mjGotoExposureBlock){
+        WEAKSELF
+        _mjGotoExposureBlock = ^(MJImpAds *impAds){
+            impAds.hasExposured = YES;
+            [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf error:nil];
+                }];
+            } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf error:error];
+                }];
             }];
-        } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
-            //
-            STRONGSELF
-            [MJTool responds:strongSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [strongSelf.delegate mjADDidExposure:strongSelf error:error];
-            }];
-        }];
-    };
+        };
+
+    }
+
+    return _mjGotoExposureBlock;
 }
+//- (void)exposureBlock {
+//    WEAKSELF
+//    kMJGotoExposureBlock = ^(MJImpAds *impAds){
+//        impAds.hasExposured = YES;
+//        [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
+//            //
+//            STRONGSELF
+//            [MJTool responds:strongSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+//                [strongSelf.delegate mjADDidExposure:strongSelf error:nil];
+//            }];
+//        } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
+//            //
+//            STRONGSELF
+//            [MJTool responds:strongSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+//                [strongSelf.delegate mjADDidExposure:strongSelf error:error];
+//            }];
+//        }];
+//    };
+//}
 - (void)masonry {
     
 }
@@ -381,7 +405,8 @@
     dispatch_after(delayInNanoSeconds, dispatch_get_global_queue(0, 0), ^{
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             if (!impAds.endShowTime && weakSelf.isShow) {
-                kMJGotoExposureBlock(impAds);
+//                kMJGotoExposureBlock(impAds);
+                self.mjGotoExposureBlock(impAds);
             }
         });
     });

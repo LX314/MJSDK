@@ -15,9 +15,14 @@
 
 #define kMJAPPsRowHeight roundf(kMainScreen_suitWidth / 320 * 100)
 
-void (^kMJAppsCellClickedBlock)(NSIndexPath *indexPath);
-void (^kMJAppsGetPropBlock)(void);
-void (^kMJAppsShowToastBlock)(NSString *toastString, BOOL dismiss);
+//void (^kMJAppsCellClickedBlock)(NSIndexPath *indexPath);
+typedef void(^kMJAppsCellClickedBlock)(NSIndexPath *indexPath);
+
+//void (^kMJAppsGetPropBlock)(void);
+typedef void(^kMJAppsGetPropBlock)(void);
+
+//void (^kMJAppsShowToastBlock)(NSString *toastString, BOOL dismiss);
+typedef void(^kMJAppsShowToastBlock)(NSString *toastString, BOOL dismiss);
 
 @interface MJBaseApps : UIViewController
 {
@@ -72,5 +77,17 @@ void (^kMJAppsShowToastBlock)(NSString *toastString, BOOL dismiss);
 -(void)changeTitle;
 
 - (void)mjToast;
+
+
+
+//***************
+/** <#注释#>*/
+@property (nonatomic,copy)kMJGotoExposureBlock mjGotoExposureBlock;
+@property (nonatomic,copy)kMJAppsCellClickedBlock mjAppsCellClickedBlock;
+@property (nonatomic,copy)kMJAppsGetPropBlock mjAppsGetPropBlock;
+@property (nonatomic,copy)kMJAppsShowToastBlock mjAppsShowToastBlock;
+
+/** <#注释#>*/
+@property (nonatomic,copy)NSString *prop_key;
 
 @end

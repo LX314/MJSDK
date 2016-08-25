@@ -16,8 +16,6 @@
 }
 /** <#注释#>*/
 //@property (nonatomic,assign)KMJADType appsType;
-/** <#注释#>*/
-@property (nonatomic,copy)NSString *prop_key;
 
 -(void)changeTitle;
 

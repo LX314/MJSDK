@@ -38,9 +38,9 @@
     [super viewDidLoad];
     [self initRe];
     //cell 点击时间
-    [self cellClickedBlock];
+//    [self cellClickedBlock];
     //领取道具
-    [self getPropBlock];
+//    [self getPropBlock];
     //show toast
 //    [self mjToast];
     //
@@ -121,11 +121,11 @@
     self.navigationItem.titleView = self.navTitleLabel;
 }
 
-- (void)cellClickedBlock {
-    WEAKSELF
-    kMJAppsCellClickedBlock = ^(NSIndexPath *indexPath){
-        [weakSelf changeTitle];
-        return;
+//- (void)cellClickedBlock {
+//    WEAKSELF
+//    kMJAppsCellClickedBlock = ^(NSIndexPath *indexPath){
+//        [weakSelf changeTitle];
+//        return;
 //        dispatch_async(dispatch_get_main_queue(), ^{
 //            //
 //            NSMutableArray *muarr_t = [weakSelf.mjResponse.impAds mutableCopy];
@@ -136,62 +136,62 @@
 //            [self.table reloadData];
 //            [weakSelf.table moveRowAtIndexPath:indexPath toIndexPath:[NSIndexPath indexPathForRow:muarr_t.count - 1 inSection:0]];
 //        });
-
-    };
-}
-- (void)getPropBlock {
-    kMJAppsGetPropBlock = ^(){
-        if (![MJTool getIDFA]) {
-            return;
-        }
-        [MJPropManager claimPropID:self.props_id price:self.price propBlock:^(NSDictionary *params) {
-            /**status: 状态
-             *  1. 成功
-             *  2. 失败
-             */
-            NSInteger status = [params[@"status"] integerValue];
-            if (!params || status != 1) {
-                MJExceptionReport *report = [MJExceptionReport reportWithADSpaceID:@"" code:kMJSDKERRORPropClaimFailure description:[NSString stringWithFormat:@"[道具][领取]失败{响应成功, read responseObject failure.}responseObject:%@\n\nResponse:%@", [params description], [params description]]];
-                [MJExceptionReportManager uploadOnlineExceptionReport:@[report]];
-                return;
-            }
-            if (status == 1) {
-                NSLog(@"领取道具成功!");
-                kMJAppsShowToastBlock(@"领取道具成功!", YES);
-                NSString *prop_key = params[@"prop_key"];
-                self.prop_key = prop_key;
-                if ([self.delegate respondsToSelector:@selector(mjClaimProps:)]) {
-                    [self.delegate mjClaimProps:prop_key];
-                }
-                //Global conf
-                if (kMJSDKShouldDisplayCoupon) {
-                    //优惠券修改手机号
-                    NSString * getModifyString = [MJTool getMJShareModifyTel];
-                    if (getModifyString) {
-                        MJCouponManager *manager = [MJCouponManager manager];
-                        [manager loadUpdate:^(NSDictionary * _Nonnull params) {
-                            BOOL success = [params[@"success"] boolValue];
-                            if (success) {
-                                NSLog(@"修改成功!");
-                            }
-                            [MJTool saveMJShareNewTel:getModifyString];
-                            [MJTool clearLocalTELKeychainModify];
-                            
-                            MJShare *mjShare = [[MJShare alloc]init];
-                            [mjShare showIn:self];
-                            return ;
-                            
-                        } updatephoneNumber:getModifyString];
-                    }
-                    MJShare *mjShare = [[MJShare alloc]init];
-                    [mjShare showIn:self];
-                }
-            } else {
-                NSAssert(NO, @"");
-            }
-        }];
-    };
-}
+//
+//    };
+//}
+//- (void)getPropBlock {
+//    kMJAppsGetPropBlock = ^(){
+//        if (![MJTool getIDFA]) {
+//            return;
+//        }
+//        [MJPropManager claimPropID:self.props_id price:self.price propBlock:^(NSDictionary *params) {
+//            /**status: 状态
+//             *  1. 成功
+//             *  2. 失败
+//             */
+//            NSInteger status = [params[@"status"] integerValue];
+//            if (!params || status != 1) {
+//                MJExceptionReport *report = [MJExceptionReport reportWithADSpaceID:@"" code:kMJSDKERRORPropClaimFailure description:[NSString stringWithFormat:@"[道具][领取]失败{响应成功, read responseObject failure.}responseObject:%@\n\nResponse:%@", [params description], [params description]]];
+//                [MJExceptionReportManager uploadOnlineExceptionReport:@[report]];
+//                return;
+//            }
+//            if (status == 1) {
+//                NSLog(@"领取道具成功!");
+//                kMJAppsShowToastBlock(@"领取道具成功!", YES);
+//                NSString *prop_key = params[@"prop_key"];
+//                self.prop_key = prop_key;
+//                if ([self.delegate respondsToSelector:@selector(mjClaimProps:)]) {
+//                    [self.delegate mjClaimProps:prop_key];
+//                }
+//                //Global conf
+//                if (kMJSDKShouldDisplayCoupon) {
+//                    //优惠券修改手机号
+//                    NSString * getModifyString = [MJTool getMJShareModifyTel];
+//                    if (getModifyString) {
+//                        MJCouponManager *manager = [MJCouponManager manager];
+//                        [manager loadUpdate:^(NSDictionary * _Nonnull params) {
+//                            BOOL success = [params[@"success"] boolValue];
+//                            if (success) {
+//                                NSLog(@"修改成功!");
+//                            }
+//                            [MJTool saveMJShareNewTel:getModifyString];
+//                            [MJTool clearLocalTELKeychainModify];
+//                            
+//                            MJShare *mjShare = [[MJShare alloc]init];
+//                            [mjShare showIn:self];
+//                            return ;
+//                            
+//                        } updatephoneNumber:getModifyString];
+//                    }
+//                    MJShare *mjShare = [[MJShare alloc]init];
+//                    [mjShare showIn:self];
+//                }
+//            } else {
+//                NSAssert(NO, @"");
+//            }
+//        }];
+//    };
+//}
 #pragma mark - TableView Required Methods
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

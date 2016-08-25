@@ -15,10 +15,11 @@
 #import "UIImage+cached.h"
 #import "UIImageView+placeholder.h"
 
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa.h>
 
 //缓存数据 key
 #define kMJSDKFullScreenPreLoadedMJResponseData @"kMJSDKFullScreenPreLoadedMJResponseData"
+#define kMJSDKHalfScreenPreLoadedMJResponseData @"kMJSDKHalfScreenPreLoadedMJResponseData"
 
 @interface MJFullOpenScreen ()
 {
@@ -56,7 +57,7 @@
         _adType = KMJADOpenFullScreenInternalType;
         _openScreenStyle = KMJOpenScreenFullScreenStyle;
         [self.view addGestureRecognizer:self.tapRecognizer];
-        [self exposureBlock];
+//        [self exposureBlock];
     }
     return self;
 }
@@ -101,8 +102,16 @@
         //save mjresponse
         NSDictionary *dict = [MTLJSONAdapter JSONDictionaryFromModel:mjResponse error:nil];
         NSString *jsonString = [MJTool toJsonString:dict];
-        [[NSUserDefaults standardUserDefaults]setObject:jsonString forKey:kMJSDKFullScreenPreLoadedMJResponseData];
-        [[NSUserDefaults standardUserDefaults]synchronize];
+        if ([self isMemberOfClass:[MJFullOpenScreen class]]) {
+            [[NSUserDefaults standardUserDefaults]setObject:jsonString forKey:kMJSDKFullScreenPreLoadedMJResponseData];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+            
+        } else if ([self isMemberOfClass:[MJHalfOpenScreen class]]) {
+            
+            [[NSUserDefaults standardUserDefaults]setObject:jsonString forKey:kMJSDKHalfScreenPreLoadedMJResponseData];
+            [[NSUserDefaults standardUserDefaults]synchronize];
+        }
+        
         //cached other resources
         MJImpAds *impAds = mjResponse.impAds[0];
         [UIImage mj_setImageWithURLString:impAds.bannerAds.mjElement.image placeholderImage:nil success:nil failure:nil];
@@ -150,7 +159,17 @@
         return;
     }
     //读取缓存数据
-    NSString *savedJsonString = [[NSUserDefaults standardUserDefaults]objectForKey:kMJSDKFullScreenPreLoadedMJResponseData];
+    NSString * savedJsonString;
+    if ([self isMemberOfClass:[MJFullOpenScreen class]]) {
+        
+         savedJsonString = [[NSUserDefaults standardUserDefaults]objectForKey:kMJSDKFullScreenPreLoadedMJResponseData];
+        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:kMJSDKFullScreenPreLoadedMJResponseData];
+    } else if ([self isMemberOfClass:[MJHalfOpenScreen class]]) {
+    
+        savedJsonString = [[NSUserDefaults standardUserDefaults]objectForKey:kMJSDKHalfScreenPreLoadedMJResponseData];
+        [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:kMJSDKHalfScreenPreLoadedMJResponseData];
+    }
+   
     NSDictionary *response = [MJTool toJsonObject:savedJsonString];
 //    NSDictionary *sortedDict = [MJTool sortDict:response];
 //    NSString *json = [MJTool toJsonString:sortedDict];
@@ -162,7 +181,8 @@
 //        NSString *json = [MJTool toJsonString:sortedDict];
 //        NSLog(@"");
     }
-    [[NSUserDefaults standardUserDefaults]setObject:@"" forKey:kMJSDKFullScreenPreLoadedMJResponseData];
+    
+    
     if (error || !response || mjResponse.impAds.count <= 0) {
         NSLog(@"首次加载,缓存数据ing...");
         [self preloadData];
@@ -179,7 +199,7 @@
     }];
     self.isShow = YES;
     [self initShow];
-    kMJGotoExposureBlock(self.mjResponse.impAds[0]);
+    self.mjGotoExposureBlock(self.mjResponse.impAds[0]);
     [MJTool responds:self.delegate toSelector:@selector(mjADDidEndShow:error:) block:^{
         [weakSelf.delegate mjADDidEndShow:weakSelf.view error:nil];
     }];
@@ -193,23 +213,47 @@
     [self fill:impAds];
 
 }
-- (void)exposureBlock {
-    WEAKSELF
-    kMJGotoExposureBlock = ^(MJImpAds *impAds){
-        impAds.hasExposured = YES;
-        [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
-            //
-            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [weakSelf.delegate mjADDidExposure:weakSelf.view error:nil];
+#pragma mark - mjGotoExposureBlock
+- (kMJGotoExposureBlock)mjGotoExposureBlock
+{
+    if(!_mjGotoExposureBlock){
+        WEAKSELF
+        _mjGotoExposureBlock = ^(MJImpAds *impAds){
+            impAds.hasExposured = YES;
+            [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf.view error:nil];
+                }];
+            } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf.view error:error];
+                }];
             }];
-        } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
-            //
-            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [weakSelf.delegate mjADDidExposure:weakSelf.view error:error];
-            }];
-        }];
-    };
+        };
+
+    }
+
+    return _mjGotoExposureBlock;
 }
+//- (void)exposureBlock {
+//    WEAKSELF
+//    kMJGotoExposureBlock = ^(MJImpAds *impAds){
+//        impAds.hasExposured = YES;
+//        [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
+//            //
+//            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+//                [weakSelf.delegate mjADDidExposure:weakSelf.view error:nil];
+//            }];
+//        } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
+//            //
+//            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+//                [weakSelf.delegate mjADDidExposure:weakSelf.view error:error];
+//            }];
+//        }];
+//    };
+//}
 /**
  * 清除缓存
  */

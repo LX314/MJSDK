@@ -22,7 +22,6 @@
 @implementation Tool
 + (void)initWechatShare {
     //
-#warning TODO 4
 //    [ShareSDK registerApp:@"iosv1101" activePlatforms:@[
 //                                                        @(SSDKPlatformSubTypeWechatTimeline),
 ////                                                        @(SSDKPlatformTypeWechat),

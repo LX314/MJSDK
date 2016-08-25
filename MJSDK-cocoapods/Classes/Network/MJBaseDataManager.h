@@ -15,7 +15,7 @@
 #import "MJError.h"
 #import "MJSDKConf.h"
 #import "MJBlocks.h"
-#import "SSKeychain.h"
+#import <SSKeychain.h>
 
 @interface MJBaseDataManager : NSObject
 

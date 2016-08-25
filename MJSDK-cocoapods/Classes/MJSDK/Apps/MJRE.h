@@ -8,12 +8,16 @@
 
 #import "MJBaseAppsCell.h"
 
+#import "MJAppsManager.h"
+
 //void(^kSelectedCell)(NSIndexPath *indexPath);
 @interface MJRE : MJBaseAppsCell
 {
     
 }
 @property (nonatomic,retain) NSIndexPath * selfIndexPath;
+/** <#注释#>*/
+@property (nonatomic,retain)MJAppsManager *appsManager;
 @property (nonatomic,retain) NSMutableArray *muarr;
 //注释
 @property (nonatomic,retain) UIImageView * imageView_share;

@@ -55,7 +55,7 @@
  */
 - (void)loadData:(NSDictionary *)params adType:(KMJADType)adType successBlock:(kRequestSuccessBlock)successBlock errorBlock:(kRequestErrorBlock)errorBlock {
     //encrypt
-#warning TODO 2
+    #warning TODO 2
     NSString *dst;// = [Encrypt encrypt:params];
     NSString *adSpaceID = params[@""];
     //封装 request

@@ -15,7 +15,9 @@
 #import "AppNavigationController.h"
 #import "MJExceptionReportManager.h"
 
-#import "ReactiveCocoa.h"
+#import <ReactiveCocoa.h>
+
+#import "MJCouponManager.h"
 
 @interface MJBaseApps ()<UITableViewDataSource>
 {
@@ -52,7 +54,7 @@
         _props_id = props_id;
         [self racMJResponse];
         [self racPrice];
-        [self exposureBlock];
+//        [self exposureBlock];
         [self mjToast];
     }
     return self;
@@ -226,7 +228,7 @@
                 CGFloat need_times = [params[@"need_times"] floatValue];
                 if (need_times <= 0.f) {
                     NSLog(@"分享次数已经完成,开始领取道具");
-                    kMJAppsGetPropBlock();
+                    self.mjAppsGetPropBlock();
                     return;
                 }
                 NSLog(@"分享次数尚未完成,尚需分享 %f 次", need_times);
@@ -237,7 +239,7 @@
             }
             case 2: {
                 NSLog(@"%@", loc_doc);
-                kMJAppsShowToastBlock(loc_doc, NO);
+                self.mjAppsShowToastBlock(loc_doc, NO);
                 if (kMJSDKDisplayCouponAgain) {
                     MJShare *mjShare = [[MJShare alloc]init];
                     [mjShare showIn:nil];
@@ -246,7 +248,7 @@
             }
             case 3: case 4:case 5:case 6: {
                 NSLog(@"%@", loc_doc);
-                kMJAppsShowToastBlock(loc_doc, NO);
+                self.mjAppsShowToastBlock(loc_doc, NO);
                 break;
             }
             default:
@@ -282,29 +284,37 @@
     }];
     self.mjResponse.impAds = array;
 }
-- (void)exposureBlock {
-    WEAKSELF
-    kMJGotoExposureBlock = ^(MJImpAds *impAds){
-        impAds.hasExposured = YES;
-        [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
-            //
-            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [weakSelf.delegate mjADDidExposure:weakSelf.view error:nil];
+#pragma mark - mjGotoExposureBlock
+- (kMJGotoExposureBlock)mjGotoExposureBlock
+{
+    if(!_mjGotoExposureBlock){
+        WEAKSELF
+        _mjGotoExposureBlock = ^(MJImpAds *impAds){
+            impAds.hasExposured = YES;
+            [MJExceptionReportManager uploadOnlineExposureReport:impAds success:^{
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf.view error:nil];
+                }];
+            } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
+                //
+                [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
+                    [weakSelf.delegate mjADDidExposure:weakSelf.view error:error];
+                }];
             }];
-        } failure:^(NSURLSessionDataTask * _Nullable dataTask, NSError * _Nonnull error) {
-            //
-            [MJTool responds:weakSelf.delegate toSelector:@selector(mjADDidExposure:error:) block:^{
-                [weakSelf.delegate mjADDidExposure:weakSelf.view error:error];
-            }];
-        }];
-    };
+        };
+
+    }
+
+    return _mjGotoExposureBlock;
 }
-- (void)mjToast {
-    kMJAppsShowToastBlock = ^(NSString *toastString, BOOL dismiss){
-        UIView *superView = mjSuperview();
-        [MJToast toast:toastString in:superView];
-    };
-}
+//- (void)mjToast {
+//    kMJAppsShowToastBlock = ^(NSString *toastString, BOOL dismiss){
+//        UIView *superView = mjSuperview();
+//        [MJToast toast:toastString in:superView];
+//    };
+//}
+
 /**
  * 清除缓存
  */
@@ -394,7 +404,8 @@
         //Your code here...
         dispatch_async(dispatch_get_global_queue(0, 0), ^{
             if (!impAds.endShowTime) {
-                kMJGotoExposureBlock(impAds);
+//                kMJGotoExposureBlock(impAds);
+                self.mjGotoExposureBlock(impAds);
             }
         });
 
@@ -408,5 +419,89 @@
     }
     MJImpAds *impAds = self.mjResponse.impAds[indexPath.row];
     impAds.endShowTime = [MJTool getInternetBJDate];
+}
+
+//****************
+#pragma mark - mjAppsGetPropBlock
+- (kMJAppsGetPropBlock)mjAppsGetPropBlock
+{
+    if(!_mjAppsGetPropBlock){
+        _mjAppsGetPropBlock = ^(){
+            if (![MJTool getIDFA]) {
+                return;
+            }
+            [MJPropManager claimPropID:self.props_id price:self.price propBlock:^(NSDictionary *params) {
+                /**status: 状态
+                 *  1. 成功
+                 *  2. 失败
+                 */
+                NSInteger status = [params[@"status"] integerValue];
+                if (!params || status != 1) {
+                    MJExceptionReport *report = [MJExceptionReport reportWithADSpaceID:@"" code:kMJSDKERRORPropClaimFailure description:[NSString stringWithFormat:@"[道具][领取]失败{响应成功, read responseObject failure.}responseObject:%@\n\nResponse:%@", [params description], [params description]]];
+                    [MJExceptionReportManager uploadOnlineExceptionReport:@[report]];
+                    return;
+                }
+                if (status == 1) {
+                    NSLog(@"领取道具成功!");
+                    self.mjAppsShowToastBlock(@"领取道具成功!", YES);
+                    NSString *prop_key = params[@"prop_key"];
+                    self.prop_key = prop_key;
+                    if ([self.delegate respondsToSelector:@selector(mjClaimProps:)]) {
+                        [self.delegate mjClaimProps:prop_key];
+                    }
+                    //Global conf
+                    if (kMJSDKShouldDisplayCoupon) {
+                        //优惠券修改手机号
+                        NSString * getModifyString = [MJTool getMJShareModifyTel];
+                        if (getModifyString) {
+                            MJCouponManager *manager = [MJCouponManager manager];
+                            [manager loadUpdate:^(NSDictionary * _Nonnull params) {
+                                BOOL success = [params[@"success"] boolValue];
+                                if (success) {
+                                    NSLog(@"修改成功!");
+                                }
+                                [MJTool saveMJShareNewTel:getModifyString];
+                                [MJTool clearLocalTELKeychainModify];
+
+                                MJShare *mjShare = [[MJShare alloc]init];
+                                [mjShare showIn:self];
+                                return ;
+
+                            } updatephoneNumber:getModifyString];
+                        }
+                        MJShare *mjShare = [[MJShare alloc]init];
+                        [mjShare showIn:self];
+                    }
+                } else {
+                    NSAssert(NO, @"");
+                }
+            }];
+        };
+
+    }
+
+    return _mjAppsGetPropBlock;
+}
+#pragma mark - mjAppsCellClickedBlock
+- (kMJAppsCellClickedBlock)mjAppsCellClickedBlock
+{
+    WEAKSELF
+    if(!_mjAppsCellClickedBlock){
+        _mjAppsCellClickedBlock = ^(NSIndexPath *indexPath){
+            [weakSelf changeTitle];
+        };
+    }
+    return _mjAppsCellClickedBlock;
+}
+#pragma mark - mjAppsShowToastBlock
+- (kMJAppsShowToastBlock)mjAppsShowToastBlock
+{
+    if(!_mjAppsShowToastBlock){
+        _mjAppsShowToastBlock = ^(NSString *toastString, BOOL dismiss){
+            UIView *superView = mjSuperview();
+            [MJToast toast:toastString in:superView];
+        };
+    }
+    return _mjAppsShowToastBlock;
 }
 @end

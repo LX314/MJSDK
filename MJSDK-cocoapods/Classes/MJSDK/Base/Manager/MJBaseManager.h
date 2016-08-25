@@ -80,4 +80,9 @@ typedef enum : NSUInteger {
 - (void)showInDefaultWindow;
 - (void)showInView:(UIView *)view;
 
+
+//***************
+/** <#注释#>*/
+@property (nonatomic,copy)kMJGotoExposureBlock mjGotoExposureBlock;
+
 @end

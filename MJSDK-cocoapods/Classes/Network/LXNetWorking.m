@@ -8,7 +8,7 @@
 
 #import "LXNetWorking.h"
 
-#import "MBProgressHUD.h"
+#import <MBProgressHUD.h>
 
 #import "MJError.h"
 #import "MJExceptionReportManager.h"

@@ -20,6 +20,13 @@ PODS:
   - Mantle/extobjc (2.0.7)
   - Masonry (1.0.1)
   - MBProgressHUD (1.0.0)
+  - MJSDK-cocoapods (1.5.9):
+    - AFNetworking
+    - Mantle
+    - Masonry
+    - MBProgressHUD
+    - ReactiveCocoa (~> 2.0)
+    - SSKeychain
   - OpenSSL (1.0.208)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -37,10 +44,15 @@ DEPENDENCIES:
   - Mantle
   - Masonry
   - MBProgressHUD
+  - MJSDK-cocoapods (from `../`)
   - OpenSSL
   - ReactiveCocoa (~> 2.0)
   - Specta
   - SSKeychain
+
+EXTERNAL SOURCES:
+  MJSDK-cocoapods:
+    :path: ../
 
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
@@ -48,11 +60,12 @@ SPEC CHECKSUMS:
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  MJSDK-cocoapods: f016213ee8d479806ca5f4461d1f0c5b15764229
   OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
-PODFILE CHECKSUM: f31e1d255e62d6edfa4aeb539ada5c1bb9d506a5
+PODFILE CHECKSUM: 4b2345a913b808692d8723b8234d192a5cbbcb10
 
 COCOAPODS: 1.1.0.beta.1

@@ -1,0 +1,1 @@
+../../../../../MJSDK-cocoapods/Classes/Component/Categories/UIImage+cached.h

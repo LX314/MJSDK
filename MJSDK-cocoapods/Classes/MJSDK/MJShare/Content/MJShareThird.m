@@ -74,7 +74,7 @@
     if ([MJTool judgePhoneNumber:changeNumber]) {
         [MJTool saveMJShareModifyTel:changeNumber];
         [MJToast toast:@"手机号修改成功，将于下次任务完成生效" in:self];
-        kGotoStepBlockBlock(lastStep);
+        self.mjShare.mjGotoStepBlockBlock(lastStep);
         
     } else {
     
