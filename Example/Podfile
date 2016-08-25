@@ -1,4 +1,5 @@
-use_frameworks!
+#use_frameworks!
+platform:ios, '7.0'
 
 target 'MJSDK-cocoapods_Example' do
   pod 'MJSDK-cocoapods', :path => '../'
@@ -8,5 +9,15 @@ target 'MJSDK-cocoapods_Example' do
 
     pod 'Specta'
   pod 'Expecta'
+
+pod 'AFNetworking'
+pod 'Masonry'
+pod 'Mantle'
+pod 'OpenSSL'
+#pod 'SVProgressHUD'
+pod 'MBProgressHUD'
+pod 'SSKeychain'
+pod 'ReactiveCocoa', '~>2.0'
+
   end
 end

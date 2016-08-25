@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D83F45A589DAF371A696BFB /* Pods_MJSDK_cocoapods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE83BD6C998BCE498863842 /* Pods_MJSDK_cocoapods_Example.framework */; };
+		0DB4049F68190F1373117F2F /* libPods-MJSDK-cocoapods_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54587283D1D12D28D7AFF589 /* libPods-MJSDK-cocoapods_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -21,8 +21,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		72EE6D032ECDE7F82A5BEB69 /* libPods-MJSDK-cocoapods_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 677D7EB7C4CAED5CCD16251F /* libPods-MJSDK-cocoapods_Tests.a */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		9FA0D0EAA36294CA2D9C75F1 /* Pods_MJSDK_cocoapods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9741CBAB5060BBA6D6BD438 /* Pods_MJSDK_cocoapods_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,8 @@
 /* Begin PBXFileReference section */
 		1566FBD82CA37BC634569E6E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1FFF94E227731E3C61CD36E6 /* Pods-MJSDK-cocoapods_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Tests/Pods-MJSDK-cocoapods_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4CE83BD6C998BCE498863842 /* Pods_MJSDK_cocoapods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJSDK_cocoapods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5252CDBCFB86D9EB045DE02B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		54587283D1D12D28D7AFF589 /* libPods-MJSDK-cocoapods_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MJSDK-cocoapods_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* MJSDK-cocoapods_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MJSDK-cocoapods_Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -59,9 +59,9 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		677D7EB7C4CAED5CCD16251F /* libPods-MJSDK-cocoapods_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MJSDK-cocoapods_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E4B67C846415530534878E /* Pods-MJSDK-cocoapods_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Example/Pods-MJSDK-cocoapods_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		A9741CBAB5060BBA6D6BD438 /* Pods_MJSDK_cocoapods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJSDK_cocoapods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B3DB14E84AED943694701E /* Pods-MJSDK-cocoapods_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Tests/Pods-MJSDK-cocoapods_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		CAF6E9A5CF2F20B08B9A3A62 /* Pods-MJSDK-cocoapods_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Example/Pods-MJSDK-cocoapods_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		F247D36C3383A265A7619375 /* MJSDK-cocoapods.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "MJSDK-cocoapods.podspec"; path = "../MJSDK-cocoapods.podspec"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				1D83F45A589DAF371A696BFB /* Pods_MJSDK_cocoapods_Example.framework in Frameworks */,
+				0DB4049F68190F1373117F2F /* libPods-MJSDK-cocoapods_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				9FA0D0EAA36294CA2D9C75F1 /* Pods_MJSDK_cocoapods_Tests.framework in Frameworks */,
+				72EE6D032ECDE7F82A5BEB69 /* libPods-MJSDK-cocoapods_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,8 +132,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				4CE83BD6C998BCE498863842 /* Pods_MJSDK_cocoapods_Example.framework */,
-				A9741CBAB5060BBA6D6BD438 /* Pods_MJSDK_cocoapods_Tests.framework */,
+				54587283D1D12D28D7AFF589 /* libPods-MJSDK-cocoapods_Example.a */,
+				677D7EB7C4CAED5CCD16251F /* libPods-MJSDK-cocoapods_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -467,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -500,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -516,9 +516,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJSDK-cocoapods/MJSDK-cocoapods-Prefix.pch";
 				INFOPLIST_FILE = "MJSDK-cocoapods/MJSDK-cocoapods-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -532,9 +534,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJSDK-cocoapods/MJSDK-cocoapods-Prefix.pch";
 				INFOPLIST_FILE = "MJSDK-cocoapods/MJSDK-cocoapods-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
