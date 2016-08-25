@@ -15,7 +15,7 @@
 #import "AppNavigationController.h"
 #import "MJExceptionReportManager.h"
 
-#import <ReactiveCocoa.h>
+#import "ReactiveCocoa.h"
 
 @interface MJBaseApps ()<UITableViewDataSource>
 {

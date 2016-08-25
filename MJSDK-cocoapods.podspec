@@ -44,7 +44,7 @@ description of MJSDK-cocoapods.
 s.dependency 'AFNetworking'
 s.dependency 'Masonry'
 s.dependency 'Mantle'
-s.dependency 'OpenSSL'
+#s.dependency 'OpenSSL'
 s.dependency 'MBProgressHUD'
 s.dependency 'SSKeychain'
 s.dependency 'ReactiveCocoa', '~>2.0'

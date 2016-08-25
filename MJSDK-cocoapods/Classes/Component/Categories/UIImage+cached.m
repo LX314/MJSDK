@@ -8,7 +8,7 @@
 
 #import "UIImage+cached.h"
 
-#import <AFImageDownloader.h>
+#import "AFImageDownloader.h"
 
 #import "MJExceptionReportManager.h"
 

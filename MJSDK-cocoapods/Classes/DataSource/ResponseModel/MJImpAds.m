@@ -11,7 +11,7 @@
 #import "MJExceptionReportManager.h"
 #import "MJTool.h"
 
-#import <SSKeychain.h>
+#import "SSKeychain.h"
 
 @interface MJImpAds ()<MTLJSONSerializing>
 {

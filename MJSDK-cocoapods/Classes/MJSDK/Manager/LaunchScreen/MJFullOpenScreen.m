@@ -15,7 +15,7 @@
 #import "UIImage+cached.h"
 #import "UIImageView+placeholder.h"
 
-#import <ReactiveCocoa.h>
+#import "ReactiveCocoa.h"
 
 //缓存数据 key
 #define kMJSDKFullScreenPreLoadedMJResponseData @"kMJSDKFullScreenPreLoadedMJResponseData"

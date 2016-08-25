@@ -2,10 +2,10 @@
 platform:ios, '7.0'
 
 target 'MJSDK-cocoapods_Example' do
-  pod 'MJSDK-cocoapods', :path => '../'
+#  pod 'MJSDK-cocoapods', :path => '../'
 
-  target 'MJSDK-cocoapods_Tests' do
-    inherit! :search_paths
+#  target 'MJSDK-cocoapods_Tests' do
+#    inherit! :search_paths
 
     pod 'Specta'
   pod 'Expecta'
@@ -19,5 +19,5 @@ pod 'MBProgressHUD'
 pod 'SSKeychain'
 pod 'ReactiveCocoa', '~>2.0'
 
-  end
+#  end
 end

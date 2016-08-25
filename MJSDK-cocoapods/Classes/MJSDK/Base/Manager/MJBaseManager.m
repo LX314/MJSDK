@@ -14,7 +14,7 @@
 #import "MJFullOpenScreen.h"
 #import "MJGLButtonInline.h"
 #import "MJSDKConf.h"
-#import <ReactiveCocoa.h>
+#import "ReactiveCocoa.h"
 
 @interface MJBaseManager ()<UITableViewDelegate,UITableViewDataSource>
 {
