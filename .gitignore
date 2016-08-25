@@ -5,6 +5,8 @@
 build/
 *.pbxuser
 !default.pbxuser
+MJSDK-cocoapods-1.5.0
+MJSDK-cocoapods-1.5.1
 *.mode1v3
 !default.mode1v3
 *.mode2v3
