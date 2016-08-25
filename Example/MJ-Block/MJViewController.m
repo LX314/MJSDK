@@ -8,6 +8,9 @@
 
 #import "MJViewController.h"
 
+#import "Macro.h"
+#import "SecondVC.h"
+
 @interface MJViewController ()
 
 @end
@@ -18,6 +21,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    //
+    kBlock = ^(void){
+        NSLog(@"*****");
+    };
+
+    SecondVC *secondVC = [[SecondVC alloc]init];
+    [self.navigationController pushViewController:secondVC animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

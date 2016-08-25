@@ -3,10 +3,10 @@ use_frameworks!
 target 'MJ-Block_Example' do
   pod 'MJ-Block', :path => '../'
 
-  target 'MJ-Block_Tests' do
-    inherit! :search_paths
+#  target 'MJ-Block_Tests' do
+#    inherit! :search_paths
 
     pod 'Specta'
   pod 'Expecta'
-  end
+#  end
 end
