@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'MJSDK-cocoapods_Example' do
+  pod 'MJSDK-cocoapods', :path => '../'
+
+  target 'MJSDK-cocoapods_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  end
+end
