@@ -1,6 +1,6 @@
 {
   "name": "MJSDK-cocoapods",
-  "version": "1.2.0",
+  "version": "1.5.0",
   "summary": "summary of MJSDK-cocoapods.",
   "description": "description of MJSDK-cocoapods.",
   "homepage": "https://github.com/LX314/MJSDK",
@@ -13,12 +13,18 @@
   },
   "source": {
     "git": "https://github.com/LX314/MJSDK.git",
-    "tag": "1.2.0"
+    "tag": "1.5.0"
   },
   "platforms": {
     "ios": "7.0"
   },
   "source_files": "MJSDK-cocoapods/Classes/**/*",
+  "resource_bundles": {
+    "MJSDK-cocoapods": [
+      "MJSDK-cocoapods/Assets/*.png"
+    ]
+  },
+  "public_header_files": "MJSDK-cocoapods/Classes/**/*.h",
   "dependencies": {
     "AFNetworking": [
 
@@ -27,9 +33,6 @@
 
     ],
     "Mantle": [
-
-    ],
-    "OpenSSL": [
 
     ],
     "MBProgressHUD": [

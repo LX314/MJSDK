@@ -32,19 +32,18 @@ description of MJSDK-cocoapods.
 
   s.source_files = 'MJSDK-cocoapods/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'MJSDK-cocoapods' => ['MJSDK-cocoapods/Assets/*.png']
-  # }
+   s.resource_bundles = {
+     'MJSDK-cocoapods' => ['MJSDK-cocoapods/Assets/*.png']
+   }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+   s.public_header_files = 'MJSDK-cocoapods/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
 s.dependency 'AFNetworking'
 s.dependency 'Masonry'
 s.dependency 'Mantle'
-s.dependency 'OpenSSL'
-#pod 'SVProgressHUD'
+#s.dependency 'OpenSSL'
 s.dependency 'MBProgressHUD'
 s.dependency 'SSKeychain'
 s.dependency 'ReactiveCocoa', '~>2.0'

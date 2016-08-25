@@ -6,8 +6,8 @@
 //  Copyright (c) 2016 LX314. All rights reserved.
 //
 
-@import UIKit;
-
+#import <UIKit/UIKit.h>
+#include "string"
 @interface MJViewController : UIViewController
 
 @end
