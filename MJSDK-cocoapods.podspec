@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MJSDK-cocoapods'
-  s.version          = '1.5.9'
+  s.version          = '1.4.0.1'
   s.summary          = 'summary of MJSDK-cocoapods.'
 
 # This description is used to generate tags and improve search results.
