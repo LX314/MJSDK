@@ -1,0 +1,1 @@
+../../../../../MJSDK-cocoapods/Classes/MJSDK/Base/Styles/MJBaseBanner.h

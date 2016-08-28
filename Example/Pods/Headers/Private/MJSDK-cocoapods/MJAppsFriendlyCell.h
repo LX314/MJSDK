@@ -1,0 +1,1 @@
+../../../../../MJSDK-cocoapods/Classes/MJSDK/Apps/MJAppsFriendlyCell.h

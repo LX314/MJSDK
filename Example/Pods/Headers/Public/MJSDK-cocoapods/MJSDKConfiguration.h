@@ -1,0 +1,1 @@
+../../../../../MJSDK-cocoapods/Classes/MJSDK/Component/MJSDKConfiguration.h

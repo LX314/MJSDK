@@ -20,9 +20,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		62427509BD8686BCFC3E85BC /* Pods_MJSDK_cocoapods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711FB49FE4DD1A214AE45987 /* Pods_MJSDK_cocoapods_Example.framework */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		AE8167FDBD3F4FB082F6E1E3 /* Pods_MJSDK_cocoapods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0383411D0993B8B13D07AF5 /* Pods_MJSDK_cocoapods_Tests.framework */; };
+		AE9D2825BAF8C257332C1B7A /* libPods-MJSDK-cocoapods_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D09A0B2DBF598A483BA7E501 /* libPods-MJSDK-cocoapods_Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,12 +57,10 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		6D30B34F5B8DC889AD6076B1 /* Pods-MJSDK-cocoapods_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Example/Pods-MJSDK-cocoapods_Example.release.xcconfig"; sourceTree = "<group>"; };
-		711FB49FE4DD1A214AE45987 /* Pods_MJSDK_cocoapods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJSDK_cocoapods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		742F91F5C3A4757B0703EDEE /* Pods-MJSDK-cocoapods_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Example/Pods-MJSDK-cocoapods_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7A95118E1AFFF0813846536B /* Pods-MJSDK-cocoapods_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Tests/Pods-MJSDK-cocoapods_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		96BD97E32579D4A6B794DFC9 /* MJSDK-cocoapods.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "MJSDK-cocoapods.podspec"; path = "../MJSDK-cocoapods.podspec"; sourceTree = "<group>"; };
-		BAF4288EF48FED64DEEAAF8D /* Pods-MJSDK-cocoapods_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-cocoapods_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-cocoapods_Tests/Pods-MJSDK-cocoapods_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		D09A0B2DBF598A483BA7E501 /* libPods-MJSDK-cocoapods_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MJSDK-cocoapods_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0383411D0993B8B13D07AF5 /* Pods_MJSDK_cocoapods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJSDK_cocoapods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -75,7 +72,7 @@
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
-				62427509BD8686BCFC3E85BC /* Pods_MJSDK_cocoapods_Example.framework in Frameworks */,
+				AE9D2825BAF8C257332C1B7A /* libPods-MJSDK-cocoapods_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +83,6 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				AE8167FDBD3F4FB082F6E1E3 /* Pods_MJSDK_cocoapods_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,8 +117,8 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				711FB49FE4DD1A214AE45987 /* Pods_MJSDK_cocoapods_Example.framework */,
 				E0383411D0993B8B13D07AF5 /* Pods_MJSDK_cocoapods_Tests.framework */,
+				D09A0B2DBF598A483BA7E501 /* libPods-MJSDK-cocoapods_Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,8 +183,6 @@
 			children = (
 				742F91F5C3A4757B0703EDEE /* Pods-MJSDK-cocoapods_Example.debug.xcconfig */,
 				6D30B34F5B8DC889AD6076B1 /* Pods-MJSDK-cocoapods_Example.release.xcconfig */,
-				BAF4288EF48FED64DEEAAF8D /* Pods-MJSDK-cocoapods_Tests.debug.xcconfig */,
-				7A95118E1AFFF0813846536B /* Pods-MJSDK-cocoapods_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -541,7 +535,6 @@
 		};
 		6003F5C3195388D20070C39A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BAF4288EF48FED64DEEAAF8D /* Pods-MJSDK-cocoapods_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -565,7 +558,6 @@
 		};
 		6003F5C4195388D20070C39A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A95118E1AFFF0813846536B /* Pods-MJSDK-cocoapods_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
