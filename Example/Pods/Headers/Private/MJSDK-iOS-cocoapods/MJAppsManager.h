@@ -1,0 +1,1 @@
+../../../../../MJSDK-iOS-cocoapods/Classes/MJSDK/Manager/MJAppsManager.h

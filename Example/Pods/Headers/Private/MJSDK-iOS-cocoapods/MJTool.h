@@ -1,0 +1,1 @@
+../../../../../MJSDK-iOS-cocoapods/Classes/MJSDK/Component/Tools/MJTool.h

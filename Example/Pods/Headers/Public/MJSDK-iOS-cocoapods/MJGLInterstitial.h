@@ -1,0 +1,1 @@
+../../../../../MJSDK-iOS-cocoapods/Classes/MJSDK/Interstitial/MJGLInterstitial.h

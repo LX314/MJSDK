@@ -1,0 +1,1 @@
+../../../../../MJSDK-iOS-cocoapods/Classes/DataSource/GlobalConf/MJGlobalConfModel.h
