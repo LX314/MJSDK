@@ -22,20 +22,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		BE048B6A1D74457A00B00FAA /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B591D74457A00B00FAA /* ShareSDK.framework */; };
-		BE048B6B1D74457A00B00FAA /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B5C1D74457A00B00FAA /* ShareSDKExtension.framework */; };
-		BE048B6C1D74457A00B00FAA /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE048B5D1D74457A00B00FAA /* ShareSDKUI.bundle */; };
-		BE048B6D1D74457A00B00FAA /* ShareSDKUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B5E1D74457A00B00FAA /* ShareSDKUI.framework */; };
-		BE048B6E1D74457A00B00FAA /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B611D74457A00B00FAA /* libWeChatSDK.a */; };
-		BE048B6F1D74457A00B00FAA /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = BE048B621D74457A00B00FAA /* README.txt */; };
-		BE048B701D74457A00B00FAA /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B671D74457A00B00FAA /* MOBFoundation.framework */; };
-		BE048B711D74457A00B00FAA /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = BE048B681D74457A00B00FAA /* ShareSDK.bundle */; };
-		BE048B721D74457A00B00FAA /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B691D74457A00B00FAA /* ShareSDKConnector.framework */; };
-		BE048B741D7448E900B00FAA /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B731D7448E900B00FAA /* libsqlite3.tbd */; };
-		BE048B761D7448F000B00FAA /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B751D7448F000B00FAA /* libicucore.tbd */; };
-		BE048B781D7448F600B00FAA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B771D7448F600B00FAA /* libz.tbd */; };
-		BE048B7A1D7448FD00B00FAA /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B791D7448FD00B00FAA /* libstdc++.tbd */; };
-		BE048B7C1D74490500B00FAA /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE048B7B1D74490500B00FAA /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,18 +59,6 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9AFFDD50BC97105B21BF2C08 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A15FD982905246DBEADB22AB /* Pods-MJSDK-iOS-cocoapods_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJSDK-iOS-cocoapods_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJSDK-iOS-cocoapods_Example/Pods-MJSDK-iOS-cocoapods_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		BE048B591D74457A00B00FAA /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
-		BE048B5C1D74457A00B00FAA /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
-		BE048B5D1D74457A00B00FAA /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
-		BE048B5E1D74457A00B00FAA /* ShareSDKUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKUI.framework; sourceTree = "<group>"; };
-		BE048B611D74457A00B00FAA /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
-		BE048B621D74457A00B00FAA /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
-		BE048B631D74457A00B00FAA /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
-		BE048B641D74457A00B00FAA /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
-		BE048B651D74457A00B00FAA /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		BE048B671D74457A00B00FAA /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
-		BE048B681D74457A00B00FAA /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
-		BE048B691D74457A00B00FAA /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
 		BE048B731D7448E900B00FAA /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		BE048B751D7448F000B00FAA /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		BE048B771D7448F600B00FAA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -99,21 +73,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE048B7C1D74490500B00FAA /* JavaScriptCore.framework in Frameworks */,
-				BE048B7A1D7448FD00B00FAA /* libstdc++.tbd in Frameworks */,
-				BE048B781D7448F600B00FAA /* libz.tbd in Frameworks */,
-				BE048B761D7448F000B00FAA /* libicucore.tbd in Frameworks */,
-				BE048B741D7448E900B00FAA /* libsqlite3.tbd in Frameworks */,
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
 				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
-				BE048B6E1D74457A00B00FAA /* libWeChatSDK.a in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				386C118641AE2695E6A7303A /* libPods-MJSDK-iOS-cocoapods_Example.a in Frameworks */,
-				BE048B6D1D74457A00B00FAA /* ShareSDKUI.framework in Frameworks */,
-				BE048B701D74457A00B00FAA /* MOBFoundation.framework in Frameworks */,
-				BE048B721D74457A00B00FAA /* ShareSDKConnector.framework in Frameworks */,
-				BE048B6A1D74457A00B00FAA /* ShareSDK.framework in Frameworks */,
-				BE048B6B1D74457A00B00FAA /* ShareSDKExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,7 +96,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				BE048B581D74457A00B00FAA /* Weichat */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for MJSDK-iOS-cocoapods */,
 				6003F5B5195388D20070C39A /* Tests */,
@@ -233,65 +195,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		BE048B581D74457A00B00FAA /* Weichat */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B591D74457A00B00FAA /* ShareSDK.framework */,
-				BE048B5A1D74457A00B00FAA /* Support */,
-			);
-			path = Weichat;
-			sourceTree = "<group>";
-		};
-		BE048B5A1D74457A00B00FAA /* Support */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B5B1D74457A00B00FAA /* Optional */,
-				BE048B5F1D74457A00B00FAA /* PlatformSDK */,
-				BE048B661D74457A00B00FAA /* Required */,
-			);
-			path = Support;
-			sourceTree = "<group>";
-		};
-		BE048B5B1D74457A00B00FAA /* Optional */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B5C1D74457A00B00FAA /* ShareSDKExtension.framework */,
-				BE048B5D1D74457A00B00FAA /* ShareSDKUI.bundle */,
-				BE048B5E1D74457A00B00FAA /* ShareSDKUI.framework */,
-			);
-			path = Optional;
-			sourceTree = "<group>";
-		};
-		BE048B5F1D74457A00B00FAA /* PlatformSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B601D74457A00B00FAA /* WeChatSDK */,
-			);
-			path = PlatformSDK;
-			sourceTree = "<group>";
-		};
-		BE048B601D74457A00B00FAA /* WeChatSDK */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B611D74457A00B00FAA /* libWeChatSDK.a */,
-				BE048B621D74457A00B00FAA /* README.txt */,
-				BE048B631D74457A00B00FAA /* WechatAuthSDK.h */,
-				BE048B641D74457A00B00FAA /* WXApi.h */,
-				BE048B651D74457A00B00FAA /* WXApiObject.h */,
-			);
-			path = WeChatSDK;
-			sourceTree = "<group>";
-		};
-		BE048B661D74457A00B00FAA /* Required */ = {
-			isa = PBXGroup;
-			children = (
-				BE048B671D74457A00B00FAA /* MOBFoundation.framework */,
-				BE048B681D74457A00B00FAA /* ShareSDK.bundle */,
-				BE048B691D74457A00B00FAA /* ShareSDKConnector.framework */,
-			);
-			path = Required;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -372,12 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE048B6C1D74457A00B00FAA /* ShareSDKUI.bundle in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				BE048B711D74457A00B00FAA /* ShareSDK.bundle in Resources */,
-				BE048B6F1D74457A00B00FAA /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
