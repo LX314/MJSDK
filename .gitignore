@@ -5,6 +5,15 @@
 build/
 *.pbxuser
 !default.pbxuser
+MJSDK-iOS-cocoapods-1.4.1.2
+MJSDK-iOS-cocoapods-1.4.1.3
+MJSDK-iOS-cocoapods-1.4.1.4
+MJSDK-iOS-cocoapods-1.4.1.5
+MJSDK-iOS-cocoapods-1.4.1.6
+MJSDK-iOS-cocoapods-1.4.1.7
+MJSDK-iOS-cocoapods-1.4.1.8
+MJSDK-iOS-cocoapods-1.4.1.9
+MJSDK-iOS-cocoapods-1.4.1.10
 *.mode1v3
 !default.mode1v3
 *.mode2v3
