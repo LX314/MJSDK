@@ -481,7 +481,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Weichat/Support/PlatformSDK/WeChatSDK",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,7 +509,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Weichat/Support/PlatformSDK/WeChatSDK",
 				);
-				MACH_O_TYPE = staticlib;
+				MACH_O_TYPE = mh_execute;
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

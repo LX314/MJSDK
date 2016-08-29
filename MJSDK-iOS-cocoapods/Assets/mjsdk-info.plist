@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+   mjsdk-info.plist
+   MJSDK-iOS
+
+   Created by John LXThyme on 16/6/20.
+   Copyright (c) 2016年 WM. All rights reserved.
+-->
+<plist version="1.0">
+    <dict>
+        
+<!--    iOS 9适配 HTTP    -->
+        <key>NSAppTransportSecurity</key>
+        <dict>
+            <key>NSAllowsArbitraryLoads</key>
+            <true/>
+        </dict>
+        
+        <!--  WeChat 分享  -->
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string></string>
+        </array>
+        
+        <key>CFBundleURLTypes</key>
+        <array>
+            <dict>
+                <key>CFBundleURLName</key>
+                <string>mjapp</string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>gotomain</string>
+                </array>
+            </dict>
+            <dict>
+                <key>CFBundleTypeRole</key>
+                <string>Editor</string>
+                <key>CFBundleURLName</key>
+                <string></string>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>wxfec3a696d78c42a5</string>
+                </array>
+            </dict>
+        </array>
+        <key>LSApplicationQueriesSchemes</key>
+        <array>
+            <string>weixin</string>
+            <string>wechat</string>
+        </array>
+        
+<!--    定位    -->
+        <key>Location Usage Description</key>
+        <string>NSLocationWhenInUseUsageDescription</string>
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>您是否允许定位?</string>
+        
+    </dict>
+</plist>

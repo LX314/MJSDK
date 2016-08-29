@@ -8,8 +8,14 @@
 
 #import "MJViewController.h"
 
-@interface MJViewController ()
+#import "MJBannerManager.h"
 
+@interface MJViewController ()
+{
+
+}
+/** <#注释#>*/
+@property (nonatomic,retain)MJBannerManager *bannerManager;
 @end
 
 @implementation MJViewController
@@ -19,11 +25,16 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
-
-- (void)didReceiveMemoryWarning
+#pragma mark - bannerManager
+- (MJBannerManager *)bannerManager
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if(!_bannerManager){
+        _bannerManager = [[MJBannerManager alloc]initWithAdSpaceID:@"a6c1deb4-29c4-4386-9729-dc2f97557702" position:KMJADTopPosition];
+
+    }
+
+    return _bannerManager;
 }
+
 
 @end
