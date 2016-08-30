@@ -1,0 +1,55 @@
+{
+  "name": "MJSDK-cocoapods",
+  "version": "1.4.2.1",
+  "summary": "summary of MJSDK-cocoapods.",
+  "description": "description of MJSDK-cocoapods.",
+  "homepage": "https://github.com/LX314/MJSDK",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "LX314": "1094426094@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/LX314/MJSDK.git",
+    "tag": "1.4.2.1"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source_files": "MJSDK-cocoapods/Classes/**/*",
+  "resource_bundles": {
+    "MJSDK-iOS-cocoapods": [
+      "MJSDK-cocoapods/Assets/*"
+    ]
+  },
+  "public_header_files": "MJSDK-cocoapods/Classes/MJSDK/Manager.h",
+  "frameworks": [
+    "UIKit",
+    "MapKit"
+  ],
+  "dependencies": {
+    "AFNetworking": [
+
+    ],
+    "Masonry": [
+
+    ],
+    "Mantle": [
+
+    ],
+    "OpenSSL": [
+
+    ],
+    "MBProgressHUD": [
+
+    ],
+    "SSKeychain": [
+
+    ],
+    "ReactiveCocoa": [
+      "~>2.0"
+    ]
+  }
+}
