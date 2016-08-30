@@ -59,10 +59,18 @@ install_resource()
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "SSKeychain/Support/SSKeychain.bundle"
+  install_resource "ShareSDK2/ShareSDK/Core/Resource.bundle"
+  install_resource "ShareSDK2/ShareSDK/Core/zh-Hans.lproj"
+  install_resource "ShareSDK2/ShareSDK/Core/en.lproj"
+  install_resource "ShareSDK2/ShareSDK/UI/ShareSDKiPhoneDefaultShareViewUI.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/MJSDK-iOS-cocoapods.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "SSKeychain/Support/SSKeychain.bundle"
+  install_resource "ShareSDK2/ShareSDK/Core/Resource.bundle"
+  install_resource "ShareSDK2/ShareSDK/Core/zh-Hans.lproj"
+  install_resource "ShareSDK2/ShareSDK/Core/en.lproj"
+  install_resource "ShareSDK2/ShareSDK/UI/ShareSDKiPhoneDefaultShareViewUI.bundle"
   install_resource "${BUILT_PRODUCTS_DIR}/MJSDK-iOS-cocoapods.bundle"
 fi
 

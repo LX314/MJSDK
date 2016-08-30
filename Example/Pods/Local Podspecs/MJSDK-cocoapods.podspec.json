@@ -50,6 +50,18 @@
     ],
     "ReactiveCocoa": [
       "~>2.0"
+    ],
+    "ShareSDK2": [
+
+    ],
+    "MOBFoundation": [
+
+    ],
+    "ShareSDK2/UI/iPhoneDefault": [
+
+    ],
+    "ShareSDK2/Connection/WeChat": [
+
     ]
   }
 }

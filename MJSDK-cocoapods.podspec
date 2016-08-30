@@ -41,12 +41,33 @@ s.public_header_files = 'MJSDK-cocoapods/Classes/MJSDK/Manager.h'
    s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 
-  s.dependency 'AFNetworking'
+#/******************Optional******************/
+#s.dependency 'ShareSDK'
+#s.dependency 'ShareSDKExtension'
+#s.dependency 'ShareSDKUI'
+#ShareSDKUI.bundle
+#/******************WeChatSDK******************/
+#s.dependency 'libWeChatSDK'
+#WechatAuthSDK.h
+#WXApi.h
+#WXApiObject.h
+#/******************Required******************/
+##s.dependency 'MOBFoundation'
+#ShareSDK.bundle
+##s.dependency 'ShareSDKConnector'
+
+s.dependency 'AFNetworking'
 s.dependency 'Masonry'
 s.dependency 'Mantle'
 s.dependency 'OpenSSL'
 s.dependency 'MBProgressHUD'
 s.dependency 'SSKeychain'
 s.dependency 'ReactiveCocoa', '~>2.0'
+
+#******************
+s.dependency 'ShareSDK2'
+s.dependency 'MOBFoundation'
+s.dependency 'ShareSDK2/UI/iPhoneDefault'
+s.dependency 'ShareSDK2/Connection/WeChat'
 
 end

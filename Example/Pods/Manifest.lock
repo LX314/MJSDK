@@ -25,9 +25,14 @@ PODS:
     - Mantle
     - Masonry
     - MBProgressHUD
+    - MOBFoundation
     - OpenSSL
     - ReactiveCocoa (~> 2.0)
+    - ShareSDK2
+    - ShareSDK2/Connection/WeChat
+    - ShareSDK2/UI/iPhoneDefault
     - SSKeychain
+  - MOBFoundation (2.0.10)
   - OpenSSL (1.0.208)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -36,6 +41,13 @@ PODS:
   - ReactiveCocoa/no-arc (2.5)
   - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
+  - ShareSDK2 (2.12.5):
+    - ShareSDK2/Core (= 2.12.5)
+  - ShareSDK2/Connection/WeChat (2.12.5):
+    - ShareSDK2/Extend/WeChatSDK
+  - ShareSDK2/Core (2.12.5)
+  - ShareSDK2/Extend/WeChatSDK (2.12.5)
+  - ShareSDK2/UI/iPhoneDefault (2.12.5)
   - Specta (1.0.5)
   - SSKeychain (1.4.1)
 
@@ -46,8 +58,12 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJSDK-cocoapods (from `../`)
+  - MOBFoundation
   - OpenSSL
   - ReactiveCocoa (~> 2.0)
+  - ShareSDK2
+  - ShareSDK2/Connection/WeChat
+  - ShareSDK2/UI/iPhoneDefault
   - Specta
   - SSKeychain
 
@@ -61,9 +77,11 @@ SPEC CHECKSUMS:
   Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  MJSDK-cocoapods: 544e4e751d9c174d3ae8796fcfd455c205ce3606
+  MJSDK-cocoapods: e795dbeaec7a0bc4eb1b9b4f07b1a1fe9b577bb2
+  MOBFoundation: be1a5556482800c5c3515f8fbd32770a6622bd42
   OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ShareSDK2: c076a9ea57d9d87650130b8071f2bcf0f169cb94
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
   SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
 
