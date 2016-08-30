@@ -3,23 +3,20 @@
 // Google's RTB encrypting/decrypting method
 // for more information, plz go through
 // https://developers.google.com/ad-exchange/rtb/response-guide/decrypt-advertising-id
-//#include "common/cipher/gcipher.h"
+
 #include "gcipher.h"
+
 #include <cstring>
 #include <algorithm>
 #include <openssl/ssl.h>
 #include <openssl/evp.h>
-//#include "common/system/time/timestamp.h"
-//#include "common/base/log.h"
-//#include "common/base/stl_util.h"
 
 namespace common {
 namespace cipher {
 
 using std::string;
 typedef unsigned char uchar;
-
-GCipher::GCipher(const string& hex_ekey, const string& hex_ikey):
+    GCipher::GCipher(const string& hex_ekey, const string& hex_ikey):
     hex_ekey_(hex_ekey), hex_ikey_(hex_ikey) {
     ekey_ = Hex2Bytes(hex_ekey_);
     ikey_ = Hex2Bytes(hex_ikey_);

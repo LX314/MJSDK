@@ -6,7 +6,6 @@
 #include <string>
 #include <map>
 #include <vector>
-//#include "common/base/nocopy.h"
 
 namespace common {
 namespace cipher {

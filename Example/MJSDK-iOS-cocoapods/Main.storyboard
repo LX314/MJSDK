@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="whP-gf-Uak">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -14,14 +14,44 @@
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="222" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNO-Qn-nhs">
+                                <rect key="frame" x="80" y="76" width="161" height="40"/>
+                                <state key="normal" title="MJInterstitialManager"/>
+                                <connections>
+                                    <action selector="btnManagerClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="XpU-Bi-3v4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="444" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ehh-g0-K2x">
+                                <rect key="frame" x="80" y="167" width="161" height="40"/>
+                                <state key="normal" title="MJAppsManager"/>
+                                <connections>
+                                    <action selector="btnManagerClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="cnm-Bb-6KG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="111" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WQ7-IN-zIC">
+                                <rect key="frame" x="80" y="28" width="161" height="40"/>
+                                <state key="normal" title="MJBannerManager"/>
+                                <connections>
+                                    <action selector="btnManagerClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="hZb-a5-hHc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="333" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToV-k8-m2M">
+                                <rect key="frame" x="80" y="119" width="161" height="40"/>
+                                <state key="normal" title="MJInlineManager"/>
+                                <connections>
+                                    <action selector="btnManagerClick:" destination="whP-gf-Uak" eventType="touchUpInside" id="wtC-j5-CbR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="268" y="343"/>
         </scene>
     </scenes>
 </document>

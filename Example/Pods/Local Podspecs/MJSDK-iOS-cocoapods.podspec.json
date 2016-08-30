@@ -1,6 +1,6 @@
 {
   "name": "MJSDK-iOS-cocoapods",
-  "version": "1.4.1.8",
+  "version": "1.4.1.9",
   "summary": "summary of MJSDK-iOS-cocoapods.",
   "description": "description of MJSDK-iOS-cocoapods.",
   "homepage": "https://github.com/LX314/MJSDK",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/LX314/MJSDK.git",
-    "tag": "1.4.1.8"
+    "tag": "1.4.1.9"
   },
   "platforms": {
     "ios": "7.0"

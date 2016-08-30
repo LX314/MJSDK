@@ -9,5 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface Encrypt : NSObject
+{
+    
+}
+
+
+#pragma mark -
+#pragma mark - encrypt||dencrypt
++ (NSDictionary *)mjEncrypt:(NSDictionary *)params_t;
++ (NSString *)encrypt:(NSDictionary *)params_t;
++ (NSDictionary *)dencrypt:(NSString *)src_t;
+
+
 
 @end

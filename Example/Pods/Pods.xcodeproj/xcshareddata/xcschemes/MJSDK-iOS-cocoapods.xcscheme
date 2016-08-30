@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7CBB61EE06BAA5FDEAF0C49B'
+               BlueprintIdentifier = 'BFB865B55405918860712703'
                BlueprintName = 'MJSDK-iOS-cocoapods'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libMJSDK-iOS-cocoapods.a'>
