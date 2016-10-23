@@ -1,0 +1,19 @@
+{
+  "name": "LXTool",
+  "version": "0.1.0",
+  "summary": "LXTool's library test",
+  "description": "LXTool's detail summary.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/LXTool",
+  "license": "MIT",
+  "authors": {
+    "张好杰 haojie.zhang": "haojie.zhang@weimob.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/LXTool.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "LXTool/Classes/**/*"
+}
