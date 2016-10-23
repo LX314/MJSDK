@@ -1,6 +1,0 @@
-framework module Pods_LXTool_Tests {
-  umbrella header "Pods-LXTool_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
