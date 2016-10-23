@@ -2110,7 +2110,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxthyme.mjsdkkkkk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ead86075-5241-4695-b1a9-57add5e62df9";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -2148,7 +2148,7 @@
 				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lxthyme.mjsdkkkkk;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ead86075-5241-4695-b1a9-57add5e62df9";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
