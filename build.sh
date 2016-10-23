@@ -1,5 +1,5 @@
 # 工程名
-APP_NAME="MJSDK"
+APP_NAME="MJSDK-iOS"
 # 证书
 CODE_SIGN_DISTRIBUTION="iPhone Distribution: Shanghai Huishuo Information Technology Co., Ltd."
 # info.plist路径
