@@ -1,0 +1,59 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - Branch (0.12.11):
+    - Branch/Core (= 0.12.11)
+    - Branch/without-IDFA (= 0.12.11)
+  - Branch/Core (0.12.11)
+  - Branch/without-IDFA (0.12.11)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
+  - OpenSSL (1.0.208)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - SSKeychain (1.4.1)
+
+DEPENDENCIES:
+  - AFNetworking
+  - Branch
+  - Mantle
+  - Masonry
+  - MBProgressHUD
+  - OpenSSL
+  - ReactiveCocoa (~> 2.0)
+  - SSKeychain
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Branch: a620b19dc96fffabb7873a86c80c77c75395a664
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  OpenSSL: b187269d386b07452f56af273764ea0636dd5da8
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
+
+PODFILE CHECKSUM: 6062fba9c8d68c73f7ce372e317139b8b60f0448
+
+COCOAPODS: 1.0.1
